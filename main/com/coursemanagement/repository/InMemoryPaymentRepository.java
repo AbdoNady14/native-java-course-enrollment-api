@@ -16,20 +16,29 @@ public class InMemoryPaymentRepository implements PaymentRepository {
 
     @Override
     public Payment findById(UUID id) {      
-    // Implementation for finding payment by ID in memory
-            return null;
+        for (Payment payment : paymentList) {
+            if (payment.getId().equals(id)) {
+                return payment;
+            }
+        }
+        return null;
     }
 
     @Override
     public java.util.List<Payment> findByEnrollmentId(UUID enrollmentId) {
-        // Implementation for finding payments by enrollment ID in memory
+        for (Payment payment : paymentList) {
+            if (payment.getEnrollmentId().equals(enrollmentId)) {
+                List<Payment> payments = new ArrayList<>();
+                payments.add(payment);
+                return payments;
+            }
+        }
         return null;
     }
 
     @Override
     public java.util.List<Payment> findAll() {
-        // Implementation for finding all payments in memory
-        return null;
+        return new ArrayList<>(paymentList);
     }
 
 }

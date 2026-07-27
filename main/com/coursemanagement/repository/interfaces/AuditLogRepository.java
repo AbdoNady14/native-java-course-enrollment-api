@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.UUID;
 
 public interface AuditLogRepository {
-    public void save(AuditLog auditLog);
+    void save(AuditLog auditLog);
 
-    public AuditLog findById(UUID id);
+    AuditLog findById(UUID id);
 
-    public List<AuditLog> findAll();
+    List<AuditLog> findAll();
 
-    public List<AuditLog> findByEntityType(String entityType);
+    List<AuditLog> findByEntityType(String entityType);
 
 }

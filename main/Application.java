@@ -8,8 +8,9 @@ public class Application {
         System.out.println("Application started successfully");
 
         Student student1 = new Student("John Doe", "john.doe@example.com", "password123", Role.STUDENT, true);
-        InMemoryStudentRepository.save(student1);
-        Student foundStudent = InMemoryStudentRepository.findById(student1.getId());
+        InMemoryStudentRepository studentRepository = new InMemoryStudentRepository();
+        studentRepository.save(student1);
+        Student foundStudent = studentRepository.findById(student1.getId());
         System.out.println("Found Student: " + foundStudent);
     }
 }

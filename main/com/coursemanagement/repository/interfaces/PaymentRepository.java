@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.UUID;
 
 public interface PaymentRepository {
-    public void save(Payment payment);
+    void save(Payment payment);
 
-    public Payment findById(UUID id);
+    Payment findById(UUID id);
 
-    public List<Payment> findByEnrollmentId(UUID enrollmentId);
+    List<Payment> findByEnrollmentId(UUID enrollmentId);
 
-    public List<Payment> findAll();
+    List<Payment> findAll();
 
 }

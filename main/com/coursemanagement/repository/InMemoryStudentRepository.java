@@ -11,12 +11,12 @@ public class InMemoryStudentRepository implements StudentRepository {
     private static final List<Student> studentList = new ArrayList<>();
 
     @Override
-    public static void save(Student student) {
+    public void save(Student student) {
         studentList.add(student);
     }
 
     @Override
-    public static Student findById(UUID id) {
+    public Student findById(UUID id) {
         for (Student student : studentList) {
             if (student.getId().equals(id)) {
                 return student;
@@ -26,7 +26,7 @@ public class InMemoryStudentRepository implements StudentRepository {
     }
 
     @Override
-    public static Student findByEmail(String email) {   
+    public Student findByEmail(String email) {   
         for (Student student : studentList) {
             if (student.getEmail().equals(email)) {
                 return student;
@@ -36,12 +36,12 @@ public class InMemoryStudentRepository implements StudentRepository {
     }
 
     @Override
-    public static List<Student> findAll() {
+    public List<Student> findAll() {
         return new ArrayList<>(studentList);
     }
 
     @Override
-    public static boolean existsByEmail(String email) {
+    public boolean existsByEmail(String email) {
         for (Student student : studentList) {
             if (student.getEmail().equals(email)) {
                 return true;
@@ -51,7 +51,7 @@ public class InMemoryStudentRepository implements StudentRepository {
     }
 
     @Override
-    public static void deleteById(UUID id) {
+    public void deleteById(UUID id) {
         for (Student student : studentList) {
             if (student.getId().equals(id)) {
                 studentList.remove(student);
