@@ -3,6 +3,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.coursemanagement.model.enums.CourseStatus;
+
 public class Course {
     private UUID id;
     private String title;

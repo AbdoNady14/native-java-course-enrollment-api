@@ -2,6 +2,8 @@ package com.coursemanagement.model;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.coursemanagement.model.enums.Role;
+
 public class Student {
     private UUID id;
     private String fullName;

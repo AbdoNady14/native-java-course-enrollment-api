@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.coursemanagement.model.enums.EnrollmentStatus;
+
 public class Enrollment {
     private UUID id;
     private UUID studentId;

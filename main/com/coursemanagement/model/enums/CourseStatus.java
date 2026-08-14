@@ -1,4 +1,4 @@
-package com.coursemanagement.model;
+package com.coursemanagement.model.enums;
 
 public enum CourseStatus {
     ACTIVE,

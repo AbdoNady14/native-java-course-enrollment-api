@@ -1,5 +1,5 @@
 import com.coursemanagement.model.Student;
-import com.coursemanagement.model.Role;
+import com.coursemanagement.model.enums.Role;
 import com.coursemanagement.repository.InMemoryStudentRepository;
 
 public class Application {
