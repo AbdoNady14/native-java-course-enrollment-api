@@ -21,14 +21,6 @@ public class StudentMapper {
             return null;
         }
 
-        StudentResponse response = new StudentResponse();
-        response.setId(student.getId());
-        response.setFullName(student.getFullName());
-        response.setEmail(student.getEmail());
-        response.setRole(student.getRole());
-        response.setActive(student.isActive());
-        response.setCreatedAt(student.getCreatedAt());
-
-        return response;
+        return new StudentResponse(student.getId(),student.getFullName(),student.getEmail(),student.getRole(),student.isActive(),student.getCreatedAt());
     }
 }
