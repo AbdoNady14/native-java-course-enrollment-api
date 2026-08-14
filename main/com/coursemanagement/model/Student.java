@@ -66,11 +66,11 @@ public class Student {
         this.role = role;
     }
 
-    public Boolean getActive() {
+    public Boolean isActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void toggleActive(Boolean active) {
         this.active = active;
     }
 
@@ -90,7 +90,7 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if(!(o instanceof Student student)) return false;
-        return this.id.equals(student.getId())&& this.email.equals(student.getEmail())&& this.fullName.equals(student.getFullName())&& this.role.equals(student.getRole())&& this.active.equals(student.getActive());
+        return this.id.equals(student.getId())&& this.email.equals(student.getEmail())&& this.fullName.equals(student.getFullName())&& this.role.equals(student.getRole())&& this.active.equals(student.isActive());
     }
 
     @Override

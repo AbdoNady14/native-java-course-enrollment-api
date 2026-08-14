@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface StudentRepository {
-    void save(Student student);
+    Student save(Student student);
 
     Student findById(UUID id);
 

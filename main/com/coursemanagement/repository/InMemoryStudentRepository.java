@@ -11,8 +11,9 @@ public class InMemoryStudentRepository implements StudentRepository {
     private static final List<Student> studentList = new ArrayList<>();
 
     @Override
-    public void save(Student student) {
+    public Student save(Student student) {
         studentList.add(student);
+        return student;
     }
 
     @Override
