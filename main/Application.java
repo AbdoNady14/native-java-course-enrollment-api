@@ -1,16 +1,28 @@
-import com.coursemanagement.model.Student;
-import com.coursemanagement.model.enums.Role;
+import com.coursemanagement.HttpServerManager;
+import com.coursemanagement.repository.InMemoryCourseRepository;
 import com.coursemanagement.repository.InMemoryStudentRepository;
+import com.coursemanagement.service.CourseService;
+import com.coursemanagement.service.StudentService;
+import java.io.IOException;
 
 public class Application {
-    public static void main(String[] args) {
-        System.out.println("Course Enrollment Management System");
-        System.out.println("Application started successfully");
+public static void main(String[] args) {
+        try {
+            // 1. إنشاء الـ Repositories
+            InMemoryStudentRepository studentRepository = new InMemoryStudentRepository();
+            InMemoryCourseRepository courseRepository = new InMemoryCourseRepository();
 
-        Student student1 = new Student("John Doe", "john.doe@example.com", "password123", Role.STUDENT, true);
-        InMemoryStudentRepository studentRepository = new InMemoryStudentRepository();
-        studentRepository.save(student1);
-        Student foundStudent = studentRepository.findById(student1.getId());
-        System.out.println("Found Student: " + foundStudent);
+            // 2. إنشاء الـ Services
+            StudentService studentService = new StudentService(studentRepository);
+            CourseService courseService = new CourseService(courseRepository);
+
+            // 3. إنشاء السيرفر وتشغيله
+            HttpServerManager serverManager = new HttpServerManager(studentService, courseService);
+            serverManager.start();
+
+        } catch (IOException e) {
+            System.err.println("Failed to start server: " + e.getMessage());
+        }
     }
 }
+
