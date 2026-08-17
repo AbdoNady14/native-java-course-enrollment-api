@@ -10,8 +10,9 @@ public class InMemoryCourseRepository implements CourseRepository {
     private static List<Course> courseList = new ArrayList<>();
 
     @Override
-    public void save(Course course) {
+    public Course save(Course course) {
         courseList.add(course);
+        return course;
     }
 
     @Override

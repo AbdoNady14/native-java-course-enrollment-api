@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface CourseRepository {
-    void save(Course course);
+    Course save(Course course);
 
     Course findById(UUID id);
 
